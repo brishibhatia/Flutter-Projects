@@ -59,43 +59,70 @@ class HomePage extends StatelessWidget {
             separatorBuilder: (context, index) => SizedBox(height: 25),
             padding: EdgeInsets.only(left: 20, right: 20),
             itemBuilder: (context, index) {
-              return Container(
-                height: 115,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    SvgPicture.asset(
-                      popularDiets[index].iconPath,
-                      height: 65,
-                      width: 65,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          popularDiets[index].name,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black,
-                            fontSize: 16,
+              return GestureDetector(
+                onTap: () {
+                  popularDiets[index].boxIsSelected = true;
+                },
+                child: Container(
+                  height: 115,
+                  decoration: BoxDecoration(
+                    color: popularDiets[index].boxIsSelected
+                        ? Colors.white
+                        : Colors.transparent,
+                    borderRadius: BorderRadius.circular(16),
+                    boxShadow: popularDiets[index].boxIsSelected
+                        ? [
+                            BoxShadow(
+                              color: const Color(0xff1D1617).withOpacity(0.07),
+                              offset: const Offset(0, 10),
+                              blurRadius: 40,
+                              spreadRadius: 0,
+                            ),
+                          ]
+                        : [],
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      SvgPicture.asset(
+                        popularDiets[index].iconPath,
+                        height: 65,
+                        width: 65,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            popularDiets[index].name,
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black,
+                              fontSize: 16,
+                            ),
                           ),
-                        ),
-                        Text(
-                          '${popularDiets[index].level} | ${popularDiets[index].duration} | ${popularDiets[index].calorie}',
-                          style: const TextStyle(
-                            color: Color(0xff7B6F72),
-                            fontSize: 13,
-                            fontWeight: FontWeight.w400,
+                          Text(
+                            '${popularDiets[index].level} | ${popularDiets[index].duration} | ${popularDiets[index].calorie}',
+                            style: const TextStyle(
+                              color: Color(0xff7B6F72),
+                              fontSize: 13,
+                              fontWeight: FontWeight.w400,
+                            ),
                           ),
+                        ],
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          popularDiets[index].boxIsSelected = true;
+                        },
+                        child: SvgPicture.asset(
+                          'assets/icons/button.svg',
+                          height: 30,
+                          width: 30,
                         ),
-                      ],
-                    ),
-                  ],
+                      ),
+                    ],
+                  ),
                 ),
               );
             },

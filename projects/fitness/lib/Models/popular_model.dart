@@ -25,14 +25,14 @@ class PopularDietsModel {
         level: 'Medium',
         duration: '30mins',
         calorie: '230kCal',
-        boxIsSelected: true,
+        boxIsSelected: false,
       ),
     );
 
     popularDiets.add(
       PopularDietsModel(
         name: 'Salmon Nigiri',
-        iconPath: 'assets/icons/honey-pancakes.svg',
+        iconPath: 'assets/icons/orange-snacks.svg',
         level: 'Easy',
         duration: '20mins',
         calorie: '120kCal',
