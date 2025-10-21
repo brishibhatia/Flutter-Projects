@@ -1,0 +1,1 @@
+Use Wrap widget instead of Row so that when the row elements start overflowing it will automatically shifted to next line.
