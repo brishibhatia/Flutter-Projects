@@ -1,2 +1,6 @@
 Use Wrap widget instead of Row so that when the row elements start overflowing it will automatically shifted to next line.
 Stateless widget is an abstract class and we just override its methods in the classes we extend
+whenever we want to give decoration to listtile wrap in container and do all decoration in contaner itself.
+SafeArea insets its child with padding to avoid operating system intrusions, using the greater of minimum or safe area padding.BUt to give full screen view we should avoid it.
+Always write the name of the file in lowercase and the class name in camelcase
+state -> over the override
