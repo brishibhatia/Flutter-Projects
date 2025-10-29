@@ -4,3 +4,9 @@ whenever we want to give decoration to listtile wrap in container and do all dec
 SafeArea insets its child with padding to avoid operating system intrusions, using the greater of minimum or safe area padding.BUt to give full screen view we should avoid it.
 Always write the name of the file in lowercase and the class name in camelcase
 state -> over the override
+Use valueNotifier and valuelistenablewidget for state varible accross the app(can be used in Stateless)
+Either use nested valuelistenablewidget or ListenableBuilder with listenable.merge
+Use ValueListenableBuilder → when you need the .value (like isDarkMode.value).AND Use ListenableBuilder → when you merge or listen to several notifiers (no direct .value).
+A TextEditingController is a special controller class in Flutter used to:-> Read , Modify, or Listen to changes in the text inside a TextField or TextFormField.
+arrow function is used if we have only one function to execute but if we have multiple (){},
+If we use .adaptive with checkbox or CheckboxListtile then it will automatically adapt to the device UI

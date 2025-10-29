@@ -16,8 +16,8 @@ class _NavbarWidgetState extends State<NavbarWidget> {
       builder: (context, selectedPage, child) {
         return NavigationBar(
           destinations: [
-            NavigationDestination(icon: Icon(Icons.home), label: "home"),
             NavigationDestination(icon: Icon(Icons.person), label: "profile"),
+            NavigationDestination(icon: Icon(Icons.home), label: "home"),
           ],
           onDestinationSelected: (value) => {
             selectedPageNotifier.value = value,
