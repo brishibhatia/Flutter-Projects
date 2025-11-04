@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/data/notifiers.dart';
 import 'package:flutter_app/views/pages/home_page.dart';
-import 'package:flutter_app/views/pages/profile_page.dart';
+import 'package:flutter_app/views/pages/settings_page.dart';
 
 import '../widgets/navbar_widget.dart';
+import 'pages/profile_page.dart';
 
 String? title = "Flutter Mapp";
 // int selectedIndex = 0;
-List<Widget> pages = [HomePage(), ProfilePage()];
+List<Widget> pages = [ProfilePage(), HomePage()];
 
 class WidgetTree extends StatefulWidget {
   const WidgetTree({super.key});
@@ -31,6 +32,19 @@ class _WidgetTreeState extends State<WidgetTree> {
               IconButton(
                 onPressed: () => isDarkMode.value = !isDarkMode.value,
                 icon: Icon(darkMode ? Icons.dark_mode : Icons.light_mode),
+              ),
+              IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return SettingsPage();
+                      },
+                    ),
+                  );
+                },
+                icon: Icon(Icons.settings, color: Colors.white),
               ),
             ],
           ),

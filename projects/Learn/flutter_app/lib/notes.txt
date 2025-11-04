@@ -10,3 +10,5 @@ Use ValueListenableBuilder → when you need the .value (like isDarkMode.value).
 A TextEditingController is a special controller class in Flutter used to:-> Read , Modify, or Listen to changes in the text inside a TextField or TextFormField.
 arrow function is used if we have only one function to execute but if we have multiple (){},
 If we use .adaptive with checkbox or CheckboxListtile then it will automatically adapt to the device UI
+Use SingleChildScrollView which -> is a scrolling widget in Flutter that lets you make its child scrollable when the content overflows the screen.
+If you want a nice ripple(splash) effect (Material look) → use InkWell. , If you need custom gesture control (like drag/swipe or non-Material look) → use GestureDetector
