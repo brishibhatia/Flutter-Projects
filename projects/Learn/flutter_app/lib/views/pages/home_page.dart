@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../widgets/hero_widget.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -10,6 +12,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("Home Page"));
+    return Padding(
+      padding: EdgeInsetsGeometry.all(20.0),
+      child: Column(children: [HeroWidget()]),
+    );
   }
 }

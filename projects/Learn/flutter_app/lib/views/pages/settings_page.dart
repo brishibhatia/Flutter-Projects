@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SettingsPage extends StatefulWidget {
-  const SettingsPage({super.key});
+  final String username;
+  final int age;
+  const SettingsPage({super.key, required this.age, required this.username});
 
   @override
   State<SettingsPage> createState() => _SettingsPageState();
@@ -16,7 +18,12 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text("Settings Page")),
+        title: Center(child: Text("Settings Page ${widget.age}")),
+        leading: BackButton(
+          onPressed: () {
+            Navigator.pop(context, {"username": widget.username});
+          },
+        ),
         automaticallyImplyLeading: false,
       ),
       body: SingleChildScrollView(

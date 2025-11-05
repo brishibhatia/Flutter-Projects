@@ -27,6 +27,7 @@ class _WidgetTreeState extends State<WidgetTree> {
         return Scaffold(
           appBar: AppBar(
             title: Text("Flutter Mapp"),
+
             centerTitle: true,
             actions: [
               IconButton(
@@ -34,20 +35,24 @@ class _WidgetTreeState extends State<WidgetTree> {
                 icon: Icon(darkMode ? Icons.dark_mode : Icons.light_mode),
               ),
               IconButton(
-                onPressed: () {
-                  Navigator.push(
+                onPressed: () async {
+                  final result = await Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return SettingsPage();
+                        return SettingsPage(age: 23, username: "Rishi");
                       },
                     ),
                   );
+                  if (result != null) {
+                    print(result);
+                  }
                 },
                 icon: Icon(Icons.settings, color: Colors.white),
               ),
             ],
           ),
+
           body: pages.elementAt(selectedPageNotifier.value),
           bottomNavigationBar: NavbarWidget(),
         );
