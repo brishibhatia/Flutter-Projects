@@ -17,3 +17,6 @@ A Scaffold is typically used inside the new page to provide the basic visual str
 Navigator.pushReplacement is similar to Navigator.push, but with one key difference:->It replaces the current screen with a new one, instead of stacking it on top.->That means when you navigate using pushReplacement,->the previous screen is removed from the navigation stack —>so the user can’t go back to it using the back button.
 Use pushReplacement when:->You don’t want the user to go back (e.g., after login or splash screen).You’re moving between major app states (like “Login → Home”).
 In a StatefulWidget, you access the data using the widget keyword: widget.username----widget.age
+hero and cliRrect are used for annimation between the pages
+Snackbar comes from ScaffoldMessenger.of(context).showSnackBar
+if we want to make somethig constant and use it then declare it in a separate class like constant or global.dart with static specifier and access it anywhere with className.member
