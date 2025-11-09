@@ -1,8 +1,8 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/data/constants.dart';
-import 'package:lottie/lottie.dart';
-
+import 'package:flutter_app/views/pages/onboarding.dart';
+import 'package:flutter_app/widgets/container_widget.dart';
+import 'package:flutter_app/widgets/cource_page.dart';
 import '../../widgets/hero_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,6 +13,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<String> list = [
+    KValue.keyConcepts,
+    KValue.basicLayout,
+    KValue.fixBugs,
+    KValue.cleanUI,
+  ];
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -20,29 +26,13 @@ class _HomePageState extends State<HomePage> {
         padding: EdgeInsetsGeometry.all(20.0),
         child: Column(
           children: [
-            HeroWidget(title: 'Home Page'),
-            // Lottie.asset(
-            //   'assets/animations/Growing House.lottie',
-            //   width: 200,
-            //   height: 200,
-            //   fit: BoxFit.contain,
-            // ),
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 10),
-              child: Card(
-                child: Padding(
-                  padding: EdgeInsets.all(8),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Basic Layout", style: KTextStyle.titleTealText),
-                      Text(
-                        "The description of this layout",
-                        style: KTextStyle.descTealText,
-                      ),
-                    ],
-                  ),
+            HeroWidget(title: 'Home Page', nextPage: CourcePage()),
+            Column(
+              children: List.generate(
+                list.length,
+                (index) => ContainerWidget(
+                  title: list.elementAt(index),
+                  description: "The description of the Layout",
                 ),
               ),
             ),

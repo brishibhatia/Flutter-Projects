@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/views/pages/home_page.dart';
 import 'package:flutter_app/views/pages/login_page.dart';
-import 'package:flutter_app/widgets/hero_widget.dart';
-
-import '../widget_tree.dart';
-import 'settings_page.dart';
+import 'package:flutter_app/views/pages/onboarding.dart';
+import 'package:lottie/lottie.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -19,7 +17,16 @@ class WelcomePage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                HeroWidget(title: "Welcome"),
+                // HeroWidget(title: "Welcome"),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(20.0),
+                  child: Lottie.asset(
+                    'assets/animations/Welcome.json',
+                    width: 300,
+                    height: 200,
+                    fit: BoxFit.contain,
+                  ),
+                ),
 
                 Container(
                   margin: const EdgeInsets.only(top: 5),
@@ -27,9 +34,7 @@ class WelcomePage extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => LoginPage(title: "Register"),
-                        ),
+                        MaterialPageRoute(builder: (context) => Onboarding()),
                       );
                     },
                     style: FilledButton.styleFrom(

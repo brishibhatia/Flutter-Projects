@@ -20,3 +20,5 @@ In a StatefulWidget, you access the data using the widget keyword: widget.userna
 hero and cliRrect are used for annimation between the pages
 Snackbar comes from ScaffoldMessenger.of(context).showSnackBar
 if we want to make somethig constant and use it then declare it in a separate class like constant or global.dart with static specifier and access it anywhere with className.member
+SharedPreferences in Flutter is a lightweight way to store small amounts of persistent data locally on a user’s device — such as settings, login state, user preferences, or any simple key–value data that should remain saved even after the app is closed or restarted.Refer SharedPreferences site
+Use List.generate with column to generate a list of Widgets 
