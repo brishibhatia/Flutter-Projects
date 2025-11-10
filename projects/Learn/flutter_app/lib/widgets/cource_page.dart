@@ -9,7 +9,7 @@ class CourcePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.all(20),
         child: SingleChildScrollView(
           child: Column(children: [HeroWidget(title: "Cource")]),
         ),

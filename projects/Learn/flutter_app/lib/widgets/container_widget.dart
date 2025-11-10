@@ -25,7 +25,7 @@ class _ContainerWidgetState extends State<ContainerWidget> {
       padding: EdgeInsets.symmetric(vertical: 10),
       child: Card(
         child: Padding(
-          padding: EdgeInsets.all(8),
+          padding: EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

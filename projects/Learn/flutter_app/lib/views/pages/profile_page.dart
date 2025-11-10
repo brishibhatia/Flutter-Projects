@@ -11,20 +11,34 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Text("LogOut"),
-      leading: Icon(Icons.select_all_rounded),
-      tileColor: Colors.amberAccent,
-      onTap: () {
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) {
-              return WelcomePage();
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        children: [
+          Stack(
+            children: [
+              CircleAvatar(
+                radius: 50,
+                backgroundImage: AssetImage('assets/images/bg.jpg'),
+              ),
+            ],
+          ),
+          ListTile(
+            title: Text("LogOut"),
+            leading: Icon(Icons.select_all_rounded),
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return WelcomePage();
+                  },
+                ),
+              );
             },
           ),
-        );
-      },
+        ],
+      ),
     );
   }
 }

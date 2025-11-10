@@ -26,7 +26,9 @@ class _HomePageState extends State<HomePage> {
         padding: EdgeInsetsGeometry.all(20.0),
         child: Column(
           children: [
+            SizedBox(height: 10),
             HeroWidget(title: 'Home Page', nextPage: CourcePage()),
+            SizedBox(height: 10),
             Column(
               children: List.generate(
                 list.length,

@@ -35,58 +35,62 @@ class _LoginPageState extends State<LoginPage> {
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                // HeroWidget(title: widget.title),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(20.0),
-                  child: Lottie.asset(
-                    'assets/animations/Welcome.json',
-                    width: 300,
-                    height: 200,
-                    fit: BoxFit.contain,
-                  ),
-                ),
-                SizedBox(height: 20),
-                TextField(
-                  controller: emailController,
-                  decoration: InputDecoration(
-                    label: Text("Email"),
-                    hintText: "Enter the Email",
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
+            child: FractionallySizedBox(
+              widthFactor: 0.7,
+              heightFactor: 1,
+              child: Column(
+                children: [
+                  // HeroWidget(title: widget.title),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(20.0),
+                    child: Lottie.asset(
+                      'assets/animations/Welcome.json',
+                      width: 300,
+                      height: 200,
+                      fit: BoxFit.contain,
                     ),
                   ),
-                  onChanged: (value) {
-                    setState(() {}); // rebuild on every text change
-                  },
-                ),
-                SizedBox(height: 20),
+                  SizedBox(height: 20),
+                  TextField(
+                    controller: emailController,
+                    decoration: InputDecoration(
+                      label: Text("Email"),
+                      hintText: "Enter the Email",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    onChanged: (value) {
+                      setState(() {}); // rebuild on every text change
+                    },
+                  ),
+                  SizedBox(height: 20),
 
-                TextField(
-                  controller: passwordController,
-                  decoration: InputDecoration(
-                    label: Text("Password"),
-                    hintText: "Enter The Password",
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
+                  TextField(
+                    controller: passwordController,
+                    decoration: InputDecoration(
+                      label: Text("Password"),
+                      hintText: "Enter The Password",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(height: 20),
-                // if(!(emailController.text.isEmpty && passwordController.text.isEmpty)){
+                  SizedBox(height: 20),
+                  // if(!(emailController.text.isEmpty && passwordController.text.isEmpty)){
 
-                // }
-                FilledButton(
-                  onPressed: () {
-                    onLoginPressed();
-                  },
-                  style: FilledButton.styleFrom(
-                    minimumSize: const Size(double.infinity, 50.0),
+                  // }
+                  FilledButton(
+                    onPressed: () {
+                      onLoginPressed();
+                    },
+                    style: FilledButton.styleFrom(
+                      minimumSize: const Size(double.infinity, 50.0),
+                    ),
+                    child: Text(widget.title),
                   ),
-                  child: Text(widget.title),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
