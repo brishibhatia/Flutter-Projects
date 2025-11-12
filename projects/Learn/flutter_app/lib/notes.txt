@@ -23,3 +23,13 @@ if we want to make somethig constant and use it then declare it in a separate cl
 SharedPreferences in Flutter is a lightweight way to store small amounts of persistent data locally on a user’s device — such as settings, login state, user preferences, or any simple key–value data that should remain saved even after the app is closed or restarted.Refer SharedPreferences site
 Use List.generate with column to generate a list of Widgets 
 use  flutter_launcher_icons to replace the logo icon of the app
+FractionallySizedBox is a layout widget in Flutter that sizes its child widget as a fraction of its parent’s size — both in width and height.--> It lets you specify how big a child should be relative to the available space of the parent.
+For better results use layoutbuilder and FractionallySizedBox
+In Dart, => is called the arrow syntax or fat arrow.It is a shorthand for returning a single expression
+Dart’s switch expressions (introduced in newer versions like Dart 3) are expression-based rather than statement-based{
+    final result = switch (number) {
+  1 => 'One',
+  2 => 'Two',
+  _ => 'Unknown', // default case
+};
+}

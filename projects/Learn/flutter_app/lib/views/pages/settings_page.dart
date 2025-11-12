@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/views/pages/expanded_flexible_test.dart';
+import 'package:flutter_app/views/pages/login_page.dart';
 
 class SettingsPage extends StatefulWidget {
   final String username;
@@ -127,7 +129,19 @@ class _SettingsPageState extends State<SettingsPage> {
                   child: Image.asset('assets/images/bg.jpg', fit: BoxFit.cover),
                 ),
               ),
-              ElevatedButton(onPressed: () {}, child: Text("Click me")),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return ExpandedFlexibleTest();
+                      },
+                    ),
+                  );
+                },
+                child: Text("show flexible and expanded"),
+              ),
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
