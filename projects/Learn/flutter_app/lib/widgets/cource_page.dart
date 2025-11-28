@@ -60,7 +60,7 @@ class _CourcePageState extends State<CourcePage> {
           if (snapshot.hasError) {
             return Text('Album Title: ${snapshot.data}');
           } else {
-            return const Text('No data available');
+            return Center(child: const Text('No data available'));
           }
         },
       ),
